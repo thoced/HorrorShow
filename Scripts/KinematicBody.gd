@@ -1,7 +1,7 @@
 extends KinematicBody
 
-export var Sensitivity_X = 0.1
-export var Sensitivity_Y = 0.1
+export var Sensitivity_X = 0.0001
+export var Sensitivity_Y = 0.0001
 export var Invert_Y_Axis = false
 export var Exit_On_Escape = true
 export var Maximum_Y_Look = 45

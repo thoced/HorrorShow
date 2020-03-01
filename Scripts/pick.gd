@@ -35,6 +35,9 @@ func _on_action(value,value2):
 		print("value 2: ", value2)
 		value2.open()
 
+func _on_close(value,value2):
+	if value == $Player:
+		value2.close()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
