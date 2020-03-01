@@ -102,3 +102,7 @@ func createBall(position):
 	m.translation = position
 	m.mesh = SphereMesh.new()
 	get_tree().get_root().get_node('Spatial').add_child(m)
+	
+func _on_action(value):
+	print("monser door !!!!")
+
