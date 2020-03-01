@@ -19,6 +19,7 @@ func _ready():
 	bodyAction = get_node(bodyActionPath)
 	var r : Array
 	r.append(self)
+	r.append("Ouvrir la porte")
 	$Area.connect("body_entered",bodyAction,"_on_action",r)
 	$Area.connect("body_exited",bodyAction,"_on_close",r)
 	

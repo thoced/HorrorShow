@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/door.gd" type="Script" id=1]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.924199, 1, 1 )
 
 [sub_resource type="CubeMesh" id=2]
@@ -22,7 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1.48977, 0, 0, 0, 0.135033, 0, 1.44155, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="pivo/KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.958845, 0, 0.244649 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="doorMesh" type="MeshInstance" parent="pivo/KinematicBody"]
 transform = Transform( 0.968167, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0.999456, 0, 0 )

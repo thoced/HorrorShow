@@ -12,8 +12,8 @@ var monster
 func _ready():
 	camera = get_node("Player/Camera")
 	monster = get_node("/root/Spatial/monster")
-	OS.window_size = Vector2(1920,1080)
-	OS.window_fullscreen = true
+	OS.window_size = Vector2(800,600)
+	OS.window_fullscreen = false
 	
 
 func _input(event):
@@ -29,13 +29,14 @@ func _input(event):
 			if result.size() != 0 and monster != null:
 				monster.setTargetPosition(result["position"])
 
-func _on_action(value,value2):
+func _on_action(value,value2,value3):
 	if value == $Player:
 		print("Joueur Door: " , value )
 		print("value 2: ", value2)
+		print(value3)
 		value2.open()
 
-func _on_close(value,value2):
+func _on_close(value,value2,value3):
 	if value == $Player:
 		value2.close()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
