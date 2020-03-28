@@ -25,7 +25,7 @@ var TargetsNode
 
 signal matchDestination
 
-var tScriptMovement
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,42 +38,8 @@ func _ready():
 	simplePaths.empty()
 	nextPoint = translation
 	
-	tScriptMovement = Thread.new()
-	tScriptMovement.start(self,"runScriptMovement","")
 	
-func runScriptMovement(userData):
 	
-	var door01  = get_node("/root/Spatial/door3")
-	var door02  = get_node("/root/Spatial/door")
-	var lumiere:OmniLight = get_node("/root/Spatial/superhouse/lumiere")
-	
-	yield(get_tree().create_timer(9.0),"timeout")
-	call_deferred("setTargetPosition",Vector3(23.309483, 3.20568, 27.120047))
-	yield(self,"matchDestination")
-	call_deferred("setTargetPosition",Vector3(23.554092, 3.20568, 24.268576))
-	yield(self,"matchDestination")
-	call_deferred("setTargetPosition",Vector3(24.211824, 3.20568, 23.98794))
-	yield(self,"matchDestination")
-	
-	# ouverture de la première porte
-	door01.open()
-	yield(get_tree().create_timer(4.0),"timeout")
-	
-	#fermeture de la lumière
-	lumiere.visible = false
-	
-	call_deferred("setTargetPosition",Vector3(16.480085, 3.20568, 24.153437))
-	
-	#ouverture de la seconde porte
-	door02.open()
-	
-	var i = 0
-	for i in range(1000):
-		lumiere.visible = !lumiere.visible
-		yield(get_tree().create_timer(0.05),"timeout")
-		
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
