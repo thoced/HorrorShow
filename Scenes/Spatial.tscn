@@ -417,7 +417,7 @@ light_energy = 3.37
 shadow_enabled = true
 shadow_color = Color( 0.160784, 0.137255, 0.137255, 1 )
 
-[node name="OmniLight3" type="OmniLight" parent="superhouse"]
+[node name="lumiere" type="OmniLight" parent="superhouse"]
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 1864.16, 112.512, 1052.99 )
 light_color = Color( 0.788235, 0.231373, 0.188235, 1 )
 light_energy = 11.94

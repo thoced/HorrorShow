@@ -41,7 +41,6 @@ func _physics_process(delta):
 		
 			
 func open():
-	print("je m'ouvre'")
 	opened = true
 	
 func close():
