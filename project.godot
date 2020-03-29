@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="HorrorShow"
-run/main_scene="res://Scenes/test.tscn"
+run/main_scene="res://Scenes/Spatial.tscn"
 config/icon="res://icon.png"
 
 [rendering]

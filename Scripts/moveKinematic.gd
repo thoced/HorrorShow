@@ -4,7 +4,7 @@ extends KinematicBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var speed = 12
+export var speed:float = 12
 export var gravity = -9.81
 export var close = 0.5
 var vectorGravity = Vector3(0,gravity,0)
@@ -24,9 +24,6 @@ var NavigationNode
 var TargetsNode
 
 signal matchDestination
-
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -99,6 +96,8 @@ func _physics_process(delta):
 		
 		
 	move_and_slide((dir * speed) + vectorGravity)
+	$Monster.look_at(dir,Vector3.UP)
+	
 	
 	
 	

@@ -13,15 +13,12 @@ func _ready():
 	tScript = Thread.new()
 	tScript.start(self,"runScriptMovement",monster)
 	
-func runScriptMonsterMovement(userData):
-	pass
-	
 func runScriptMovement(userData):
 	print("dans le run script")
 	var door01  = get_node("/root/Spatial/door3")
 	var door02  = get_node("/root/Spatial/door")
 	var lumiere:OmniLight = get_node("/root/Spatial/superhouse/lumiere")
-	
+
 	yield(get_tree().create_timer(9.0),"timeout")
 	monster.setTargetPosition(Vector3(23.309483, 3.20568, 27.120047))
 	yield(userData,"matchDestination")

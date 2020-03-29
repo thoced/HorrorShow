@@ -12,8 +12,8 @@ var monster
 func _ready():
 	camera = get_node("Player/Camera")
 	monster = get_node("/root/Spatial/monster")
-	OS.window_size = Vector2(800,600)
-	OS.window_fullscreen = false
+	OS.window_size = Vector2(1920,1080)
+	OS.window_fullscreen = true
 	
 
 func _input(event):
