@@ -25,6 +25,8 @@ var TargetsNode
 
 signal matchDestination
 
+var character
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#listPosTarget = get_node("/root/Spatial/targetsNode")
@@ -34,6 +36,7 @@ func _ready():
 	nextTargetPos = $".".translation
 	simplePaths.empty()
 	nextPoint = translation
+	character = get_node(".")
 	
 	
 	
@@ -94,9 +97,14 @@ func _physics_process(delta):
 			onMove = false
 			emit_signal("matchDestination")
 		
-		
 	move_and_slide((dir * speed) + vectorGravity)
-	$Monster.look_at(dir,Vector3.UP)
+		
+	if dir.x != 0 and dir.z != 0:
+		var angle = atan2(dir.x,dir.z)
+		var char_rot = get_rotation()
+		char_rot.y = lerp(char_rot.y,angle,0.05)
+		character.set_rotation(char_rot)	
+	
 	
 	
 	
