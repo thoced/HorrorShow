@@ -1,11 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
 
-[sub_resource type="Environment" id=1]
-
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 
 [node name="FirstPersonController" type="Spatial"]
 
@@ -19,9 +17,14 @@ Maximum_Walk_Speed = 2
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435676, 0 )
-environment = SubResource( 1 )
 script = ExtResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Player/Camera"]
+visible = false
+light_bake_mode = 0
+shadow_bias = 1.0
+shadow_contact = 0.43
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 0.2, 0, 0, 0, -8.74228e-09, -0.4, 0, 0.2, -1.74846e-08, 0, 0, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )

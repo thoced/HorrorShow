@@ -25,8 +25,6 @@ var TargetsNode
 
 signal matchDestination
 
-var character
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#listPosTarget = get_node("/root/Spatial/targetsNode")
@@ -36,8 +34,6 @@ func _ready():
 	nextTargetPos = $".".translation
 	simplePaths.empty()
 	nextPoint = translation
-	character = get_node(".")
-	
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -103,11 +99,8 @@ func _physics_process(delta):
 		var angle = atan2(dir.x,dir.z)
 		var char_rot = get_rotation()
 		char_rot.y = lerp(char_rot.y,angle,0.05)
-		character.set_rotation(char_rot)	
-	
-	
-	
-	
+		set_rotation(char_rot)
+
 	
 func setTargetPosition(position):
 	targetPosition = position
