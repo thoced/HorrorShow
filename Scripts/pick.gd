@@ -10,7 +10,7 @@ var monster
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	camera = get_node("Player/Camera")
+	camera = get_node("/root/Spatial/Player/NodeCamera/Camera")
 	monster = get_node("/root/Spatial/Monster")
 	OS.window_size = Vector2(1920,1080)
 	OS.window_fullscreen = true

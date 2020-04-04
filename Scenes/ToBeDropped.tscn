@@ -4,10 +4,9 @@
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
+height = 1.8
 
-[node name="FirstPersonController" type="Spatial"]
-
-[node name="Player" type="KinematicBody" parent="."]
+[node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 Sensitivity_X = 0.005
 Sensitivity_Y = 0.005
@@ -15,16 +14,19 @@ Maximum_Y_Look = 90
 Accelaration = 2
 Maximum_Walk_Speed = 2
 
-[node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435676, 0 )
-script = ExtResource( 2 )
-
-[node name="SpotLight" type="SpotLight" parent="Player/Camera"]
-visible = false
-light_bake_mode = 0
-shadow_bias = 1.0
-shadow_contact = 0.43
-
-[node name="CollisionShape" type="CollisionShape" parent="Player"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, -8.74228e-09, -0.4, 0, 0.2, -1.74846e-08, 0, 0, 0 )
 shape = SubResource( 1 )
+
+[node name="NodeCamera" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.619904, 0 )
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="NodeCamera"]
+
+[node name="SpotLight" type="SpotLight" parent="NodeCamera/Camera"]
+visible = false
+light_energy = 4.17
+light_bake_mode = 2
+shadow_bias = -6.17
+shadow_contact = 0.43

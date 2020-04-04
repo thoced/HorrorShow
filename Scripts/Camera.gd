@@ -1,4 +1,4 @@
-extends Camera
+extends Spatial
 
 var SENSITIVITY_Y = 0
 var INVERSION_MULT = 1

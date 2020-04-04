@@ -13,11 +13,17 @@ const GRAVITY = 0.098
 var velocity = Vector3(0,0,0)
 var forward_velocity = 0
 var Walk_Speed = 0
+var crounch = false
+var positionDown
+var positionUp
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	forward_velocity = Walk_Speed
 	set_process(true)
+	
+	positionUp = $NodeCamera.transform.origin
+	positionDown = $NodeCamera.transform.origin + Vector3(0,-0.5,0)
 	
 
 func _process(delta):
@@ -29,6 +35,7 @@ func _process(delta):
 	
 func _physics_process(delta):
 	velocity.y -= GRAVITY
+	crounch = false
 	
 	if Input.is_key_pressed(KEY_Z) or Input.is_key_pressed(KEY_UP):
 		Walk_Speed += Accelaration
@@ -47,8 +54,7 @@ func _physics_process(delta):
 		if Walk_Speed > Maximum_Walk_Speed:
 			Walk_Speed = Maximum_Walk_Speed
 		velocity.x = -global_transform.basis.x.x * Walk_Speed
-		velocity.z = -global_transform.basis.x.z * Walk_Speed
-		
+		velocity.z = -global_transform.basis.x.z * Walk_Speed	
 		
 	if Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_D):
 		Walk_Speed += Accelaration
@@ -65,6 +71,18 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = Jump_Speed
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
+	
+	#crounch
+	if Input.is_key_pressed(KEY_CONTROL):
+		crounch = true
+		var vNew = $NodeCamera.transform.origin.linear_interpolate(positionDown,0.1)
+		$NodeCamera.transform.origin = vNew
+	else:
+		var vNew = $NodeCamera.transform.origin.linear_interpolate(positionUp,0.1)
+		$NodeCamera.transform.origin = vNew
+		
+		
+		
 	
 func _input(event):
 	if event is InputEventMouseMotion:
