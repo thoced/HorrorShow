@@ -6,7 +6,7 @@ var animationPlayer
 func _ready():
 	animationPlayer = get_parent().get_node("AnimationPlayer")
 	animationPlayer.connect("animation_finished",self,"_on_AnimationPlayer_animation_finished")
-	animationPlayer.play("Walk",-1,0.8)
+	animationPlayer.play("Idle",-1,0.4)
 	
 	
 	

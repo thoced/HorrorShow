@@ -29,6 +29,5 @@ transform = Transform( 9.37881, 0, 0, 0, 0.512498, 12.6842, 0, -11.8377, 0.47829
 light_color = Color( 0.929412, 0.843137, 0.752941, 1 )
 light_energy = 2.94
 shadow_enabled = true
-spot_range = 8.3
 spot_angle = 82.3
 spot_angle_attenuation = 1.86607
