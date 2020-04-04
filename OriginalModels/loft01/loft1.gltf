@@ -20,7 +20,8 @@
                 1,
                 2,
                 3,
-                4
+                4,
+                5
             ]
         }
     ],
@@ -85,6 +86,15 @@
                 0.10000000149011612,
                 0.10000000149011612,
                 0.10000000149011612
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "plafond",
+            "translation" : [
+                88.69589233398438,
+                25,
+                40.69390106201172
             ]
         }
     ],
@@ -165,6 +175,18 @@
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.9409090876579285
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "plafondmat",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 7,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
             }
         }
     ],
@@ -264,6 +286,20 @@
                     "material" : 0
                 }
             ]
+        },
+        {
+            "name" : "Plane",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 36,
+                        "NORMAL" : 37,
+                        "TEXCOORD_0" : 38
+                    },
+                    "indices" : 35,
+                    "material" : 5
+                }
+            ]
         }
     ],
     "textures" : [
@@ -287,6 +323,9 @@
         },
         {
             "source" : 6
+        },
+        {
+            "source" : 7
         }
     ],
     "images" : [
@@ -324,6 +363,11 @@
             "mimeType" : "image/jpeg",
             "name" : "TexturesCom_WallpaperForties0041_seamless_S",
             "uri" : "TexturesCom_WallpaperForties0041_seamless_S.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "TexturesCom_ConcreteStucco0119_1_seamless_S",
+            "uri" : "TexturesCom_ConcreteStucco0119_1_seamless_S.jpg"
         }
     ],
     "accessors" : [
@@ -500,10 +544,10 @@
         {
             "bufferView" : 20,
             "componentType" : 5126,
-            "count" : 66,
+            "count" : 64,
             "max" : [
                 74.66876983642578,
-                25,
+                27.145374298095703,
                 58.93595886230469
             ],
             "min" : [
@@ -516,13 +560,13 @@
         {
             "bufferView" : 21,
             "componentType" : 5126,
-            "count" : 66,
+            "count" : 64,
             "type" : "VEC3"
         },
         {
             "bufferView" : 22,
             "componentType" : 5126,
-            "count" : 66,
+            "count" : 64,
             "type" : "VEC2"
         },
         {
@@ -632,6 +676,34 @@
             "componentType" : 5123,
             "count" : 6,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 36,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                54.77239990234375,
+                0,
+                41.72984313964844
+            ],
+            "min" : [
+                -54.77239990234375,
+                0,
+                -41.72984313964844
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 37,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 38,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC2"
         }
     ],
     "bufferViews" : [
@@ -737,88 +809,103 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 792,
+            "byteLength" : 768,
             "byteOffset" : 62056
         },
         {
             "buffer" : 0,
-            "byteLength" : 792,
-            "byteOffset" : 62848
+            "byteLength" : 768,
+            "byteOffset" : 62824
         },
         {
             "buffer" : 0,
-            "byteLength" : 528,
-            "byteOffset" : 63640
+            "byteLength" : 512,
+            "byteOffset" : 63592
         },
         {
             "buffer" : 0,
             "byteLength" : 216,
-            "byteOffset" : 64168
+            "byteOffset" : 64104
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 64384
+            "byteOffset" : 64320
         },
         {
             "buffer" : 0,
             "byteLength" : 336,
-            "byteOffset" : 64720
+            "byteOffset" : 64656
         },
         {
             "buffer" : 0,
             "byteLength" : 224,
-            "byteOffset" : 65056
+            "byteOffset" : 64992
         },
         {
             "buffer" : 0,
             "byteLength" : 84,
-            "byteOffset" : 65280
+            "byteOffset" : 65216
         },
         {
             "buffer" : 0,
             "byteLength" : 192,
-            "byteOffset" : 65364
+            "byteOffset" : 65300
         },
         {
             "buffer" : 0,
             "byteLength" : 192,
-            "byteOffset" : 65556
+            "byteOffset" : 65492
         },
         {
             "buffer" : 0,
             "byteLength" : 128,
-            "byteOffset" : 65748
+            "byteOffset" : 65684
         },
         {
             "buffer" : 0,
             "byteLength" : 60,
-            "byteOffset" : 65876
+            "byteOffset" : 65812
         },
         {
             "buffer" : 0,
             "byteLength" : 48,
-            "byteOffset" : 65936
+            "byteOffset" : 65872
         },
         {
             "buffer" : 0,
             "byteLength" : 48,
-            "byteOffset" : 65984
+            "byteOffset" : 65920
         },
         {
             "buffer" : 0,
             "byteLength" : 32,
-            "byteOffset" : 66032
+            "byteOffset" : 65968
         },
         {
             "buffer" : 0,
             "byteLength" : 12,
-            "byteOffset" : 66064
+            "byteOffset" : 66000
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 66012
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 66060
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32,
+            "byteOffset" : 66108
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 66076,
+            "byteLength" : 66140,
             "uri" : "loft1.bin"
         }
     ]
