@@ -25,7 +25,7 @@ var TargetsNode
 
 signal matchDestination
 
-var blendAnimation = 0.0
+var blendAnimation = 0.01
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,9 +38,9 @@ func _ready():
 	nextPoint = translation
 	
 	#animation
+	#$AnimationPlayer.connect("animation_finished",self,"_on_AnimationPlayer_animation_finished")
+	#$AnimationPlayer.play("Idle",-1,0.8)
 	
-	$AnimationPlayer.connect("animation_finished",self,"_on_AnimationPlayer_animation_finished")
-	$AnimationPlayer.play("Idle",-1,0.8)
 	
 	
 	
@@ -111,6 +111,7 @@ func _physics_process(delta):
 		var char_rot = get_rotation()
 		char_rot.y = lerp(char_rot.y,angle,0.05)
 		set_rotation(char_rot)
+		
 		$AnimationTree.set("parameters/transition/blend_amount", blendAnimation)
 		blendAnimation += delta * 2
 		if blendAnimation > 1.0:
@@ -118,6 +119,7 @@ func _physics_process(delta):
 		#$AnimationPlayer.play("Walk",-1,0.8)
 	else:
 		#$AnimationTree.set("parameters/transition/blend_amount", 0.01)
+		#$AnimationTree.set("parameters/Choix/current", "Walk")
 		$AnimationTree.set("parameters/transition/blend_amount", blendAnimation)
 		blendAnimation -= delta * 2
 		if blendAnimation < 0:
