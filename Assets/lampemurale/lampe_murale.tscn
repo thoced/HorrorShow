@@ -15,12 +15,9 @@ transform = Transform( 1, -2.98023e-08, 0, 1.49012e-08, 1, 0, -1.42109e-14, 1.77
 layers = 2
 use_in_baked_light = true
 
-[node name="OmniLight" type="OmniLight" parent="." index="3"]
-transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 13.9112, 35.1302 )
+[node name="OmniLight2" type="OmniLight" parent="." index="3"]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -94.5298, 158.186 )
 visible = false
-light_color = Color( 0.937255, 0.909804, 0.709804, 1 )
-light_energy = 0.81
-light_cull_mask = 4294967293
-shadow_enabled = true
-omni_range = 10.3
-omni_attenuation = 7.72749
+light_color = Color( 0.917647, 0.901961, 0.537255, 1 )
+omni_range = 4.0
+omni_attenuation = 1.93187
