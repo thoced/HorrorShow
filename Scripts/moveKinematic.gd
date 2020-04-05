@@ -25,6 +25,8 @@ var TargetsNode
 
 signal matchDestination
 
+var blendAnimation = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#listPosTarget = get_node("/root/Spatial/targetsNode")
@@ -109,10 +111,17 @@ func _physics_process(delta):
 		var char_rot = get_rotation()
 		char_rot.y = lerp(char_rot.y,angle,0.05)
 		set_rotation(char_rot)
-		$AnimationPlayer.play("Walk",-1,0.8)
+		$AnimationTree.set("parameters/transition/blend_amount", blendAnimation)
+		blendAnimation += delta * 2
+		if blendAnimation > 1.0:
+			blendAnimation = 1.0
+		#$AnimationPlayer.play("Walk",-1,0.8)
 	else:
-		$AnimationPlayer.play("Idle",-1,0.8)
-		
+		#$AnimationTree.set("parameters/transition/blend_amount", 0.01)
+		$AnimationTree.set("parameters/transition/blend_amount", blendAnimation)
+		blendAnimation -= delta * 2
+		if blendAnimation < 0:
+			blendAnimation = 0.01
 	
 
 	
