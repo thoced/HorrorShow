@@ -16,6 +16,9 @@ var Walk_Speed = 0
 var crounch = false
 var positionDown
 var positionUp
+var bananeCenter
+var bananeLeft
+var bananeRight
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -24,6 +27,10 @@ func _ready():
 	
 	positionUp = $NodeCamera.transform.origin
 	positionDown = $NodeCamera.transform.origin + Vector3(0,-0.5,0)
+	
+	bananeCenter = $NodeCamera.transform.basis
+	bananeLeft = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-30.0))
+	bananeRight = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(30.0))
 	
 
 func _process(delta):
@@ -81,7 +88,16 @@ func _physics_process(delta):
 		var vNew = $NodeCamera.transform.origin.linear_interpolate(positionUp,0.1)
 		$NodeCamera.transform.origin = vNew
 		
-		
+	#banane
+	if Input.is_key_pressed(KEY_A):
+		var vNew = $NodeCamera.transform.basis.slerp(bananeLeft,0.1)
+		$NodeCamera.transform.basis = vNew
+	if Input.is_key_pressed(KEY_E):
+		var vNew = $NodeCamera.transform.basis.slerp(bananeRight,0.1)
+		$NodeCamera.transform.basis = vNew
+	else:
+		var vNew = $NodeCamera.transform.basis.slerp(bananeCenter,0.1)
+		$NodeCamera.transform.basis = vNew
 		
 	
 func _input(event):

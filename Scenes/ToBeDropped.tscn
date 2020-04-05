@@ -19,10 +19,11 @@ transform = Transform( 0.2, 0, 0, 0, -8.74228e-09, -0.4, 0, 0.2, -1.74846e-08, 0
 shape = SubResource( 1 )
 
 [node name="NodeCamera" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.619904, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.476408, 0 )
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="NodeCamera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01394, 0 )
 
 [node name="SpotLight" type="SpotLight" parent="NodeCamera/Camera"]
 visible = false
