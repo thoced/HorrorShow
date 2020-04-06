@@ -8,8 +8,8 @@ height = 1.8
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
-Sensitivity_X = 0.005
-Sensitivity_Y = 0.005
+Sensitivity_X = 0.003
+Sensitivity_Y = 0.003
 Maximum_Y_Look = 90
 Accelaration = 2
 Maximum_Walk_Speed = 2
