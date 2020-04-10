@@ -26,7 +26,8 @@
                 7,
                 8,
                 9,
-                10
+                10,
+                11
             ]
         }
     ],
@@ -149,6 +150,15 @@
                 0.3703821897506714,
                 3.3632147312164307,
                 19.823509216308594
+            ]
+        },
+        {
+            "mesh" : 8,
+            "name" : "tapisSDB",
+            "translation" : [
+                0.5995521545410156,
+                0.03531716391444206,
+                12.0927152633667
             ]
         }
     ],
@@ -315,6 +325,25 @@
                 "metallicFactor" : 0,
                 "metallicRoughnessTexture" : {
                     "index" : 19,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "tapisSDB",
+            "normalTexture" : {
+                "index" : 20,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 21,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "metallicRoughnessTexture" : {
+                    "index" : 22,
                     "texCoord" : 0
                 }
             }
@@ -512,6 +541,20 @@
                     "material" : 9
                 }
             ]
+        },
+        {
+            "name" : "Cube.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 66,
+                        "NORMAL" : 67,
+                        "TEXCOORD_0" : 68
+                    },
+                    "indices" : 69,
+                    "material" : 10
+                }
+            ]
         }
     ],
     "textures" : [
@@ -574,6 +617,15 @@
         },
         {
             "source" : 19
+        },
+        {
+            "source" : 20
+        },
+        {
+            "source" : 21
+        },
+        {
+            "source" : 22
         }
     ],
     "images" : [
@@ -676,6 +728,21 @@
             "mimeType" : "image/png",
             "name" : "TexturesCom_Tiles_Broken_1K_roughness",
             "uri" : "TexturesCom_Tiles_Broken_1K_roughness.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_Fabric_Knitted2_1K_normal",
+            "uri" : "TexturesCom_Fabric_Knitted2_1K_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_Fabric_Knitted2_1K_albedo",
+            "uri" : "TexturesCom_Fabric_Knitted2_1K_albedo.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_Fabric_Knitted2_1K_roughness",
+            "uri" : "TexturesCom_Fabric_Knitted2_1K_roughness.png"
         }
     ],
     "accessors" : [
@@ -1244,6 +1311,40 @@
             "componentType" : 5123,
             "count" : 48,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 66,
+            "componentType" : 5126,
+            "count" : 378,
+            "max" : [
+                5.14034366607666,
+                0.06244313716888428,
+                2.395493268966675
+            ],
+            "min" : [
+                -5.14034366607666,
+                -0.06244313716888428,
+                -2.395493268966675
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 67,
+            "componentType" : 5126,
+            "count" : 378,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 68,
+            "componentType" : 5126,
+            "count" : 378,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 69,
+            "componentType" : 5123,
+            "count" : 558,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -1576,11 +1677,31 @@
             "buffer" : 0,
             "byteLength" : 96,
             "byteOffset" : 258456
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4536,
+            "byteOffset" : 258552
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4536,
+            "byteOffset" : 263088
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3024,
+            "byteOffset" : 267624
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1116,
+            "byteOffset" : 270648
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 258552,
+            "byteLength" : 271764,
             "uri" : "loft1.bin"
         }
     ]
