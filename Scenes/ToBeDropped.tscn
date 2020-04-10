@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 1.8
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -24,10 +27,15 @@ script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="NodeCamera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01394, 0 )
+environment = SubResource( 2 )
+current = true
 
 [node name="SpotLight" type="SpotLight" parent="NodeCamera/Camera"]
 visible = false
+light_color = Color( 0.835294, 0.811765, 0.713726, 1 )
 light_energy = 4.17
 light_bake_mode = 2
 shadow_bias = -6.17
 shadow_contact = 0.43
+spot_attenuation = -0.574349
+spot_angle_attenuation = 2.21914
