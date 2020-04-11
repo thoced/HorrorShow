@@ -41,15 +41,11 @@ func _ready():
 	
 	playerSound = get_parent().get_node("PlayerSound")
 	playerSound.connect("finished",self,"finish_sound")
-	
-	audioDoor = load("res://Sons/door.wav")
-	#playerSound.stream = audioDoor
-	
+		
 
 func finish_sound():
 	playIsDone = false
 	
-
 func _process(delta):
 	if Exit_On_Escape:
 		if Input.is_key_pressed(KEY_ESCAPE):
@@ -136,4 +132,4 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-Sensitivity_X * event.relative.x)
 		
-			
+
