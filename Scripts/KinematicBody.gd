@@ -20,9 +20,11 @@ var bananeCenter
 var bananeLeft
 var bananeRight
 
+# Sound
 var forwardPressed = false
 var playIsDone = false
-var playerSon
+var playerSound
+var audioDoor
 
 
 func _ready():
@@ -34,14 +36,17 @@ func _ready():
 	positionDown = $NodeCamera.transform.origin + Vector3(0,-0.5,0)
 	
 	bananeCenter = $NodeCamera.transform.basis
-	bananeLeft = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-30.0))
-	bananeRight = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(30.0))
+	bananeLeft = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-15.0))
+	bananeRight = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(15.0))
 	
-	playerSon = get_parent().get_node("PlayerSon")
-	playerSon.connect("finished",self,"finish_son")
+	playerSound = get_parent().get_node("PlayerSound")
+	playerSound.connect("finished",self,"finish_sound")
+	
+	audioDoor = load("res://Sons/door.wav")
+	#playerSound.stream = audioDoor
 	
 
-func finish_son():
+func finish_sound():
 	playIsDone = false
 	
 
@@ -51,7 +56,7 @@ func _process(delta):
 			get_tree().quit()
 			
 	if forwardPressed and !playIsDone:
-		playerSon.play(1.0)
+		playerSound.play(1.0)
 		playIsDone = true
 	
 	
@@ -97,7 +102,7 @@ func _physics_process(delta):
 	if not(Input.is_key_pressed(KEY_Z) or Input.is_key_pressed(KEY_Q) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT)):
 		velocity.x = 0
 		velocity.z = 0
-		playerSon.stop()
+		playerSound.stop()
 		playIsDone = false
 		
 	if is_on_floor():
@@ -121,7 +126,7 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_E):
 		var vNew = $NodeCamera.transform.basis.slerp(bananeRight,0.1)
 		$NodeCamera.transform.basis = vNew
-	else:
+	elif not(Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_E)):
 		var vNew = $NodeCamera.transform.basis.slerp(bananeCenter,0.1)
 		$NodeCamera.transform.basis = vNew
 		
