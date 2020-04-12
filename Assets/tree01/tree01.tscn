@@ -6,6 +6,8 @@
 
 [node name="tree" parent="." index="0"]
 layers = 524288
+use_in_baked_light = true
 
 [node name="leaves" parent="tree" index="0"]
 layers = 524288
+use_in_baked_light = true

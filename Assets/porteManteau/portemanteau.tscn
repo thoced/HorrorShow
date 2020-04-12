@@ -10,6 +10,7 @@ height = 219.96
 
 [node name="Mesh" parent="RootNode gltf orientation matrix/RootNode model correction matrix/058899284be547238dfb09faaad592a1objcleanermaterialmergergles" index="0"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="RootNode gltf orientation matrix/RootNode model correction matrix/058899284be547238dfb09faaad592a1objcleanermaterialmergergles/Mesh" index="0"]
 
