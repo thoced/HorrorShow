@@ -29,6 +29,16 @@ func finish_sound():
 	
 func getInventaire():
 	return inventaire
+	
+func getPick():
+	var ray_lenght = 1000
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = $NodeCamera/Camera.project_ray_origin(mouse_pos)
+	var to = $NodeCamera/Camera.project_ray_normal(mouse_pos) * ray_lenght
+	var space_state = get_world().direct_space_state
+	var result = space_state.intersect_ray(from,to)
+	if result != null and result.size() > 0:
+		return result
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -3,13 +3,13 @@ extends "res://Scripts/porteBase.gd"
 class_name porteSDB
 
 func _ready():
-	doorAngleOpen = -90.0
+	pass
 
 func _input(event):
 	if playerOnDoor:
 		if event is InputEventKey:
 			if event.pressed and event.scancode == KEY_U:
-				if player.inventaire.has("KEY01"):
+				if player.inventaire.has("KEYGOLD"):
 					stateDoor = !stateDoor
 					if stateDoor:
 						$DoorUnlockSound.play(4.09)
