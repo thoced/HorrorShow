@@ -8,9 +8,12 @@ func _ready():
 func _input(event):
 	if playerOnDoor:
 		if event is InputEventKey:
-			if event.pressed and !$AudioStreamPlayer3D.playing and event.scancode == KEY_U:
+			if event.pressed and !$AudioStreamPlayer3D.playing and event.scancode == KEY_U and player.inventaire.has("KEY01"):
 					$AudioStreamPlayer3D.play(0.0)
 					$Timer.start(0.75)
+					
+					
+	
 					
 func _on_Timer_EndSoundDoor():
 	$AudioStreamPlayer3D.stop()

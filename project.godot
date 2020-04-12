@@ -25,9 +25,19 @@ _global_script_classes=[ {
 "path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
 }, {
 "base": "Node",
+"class": "Inventaire",
+"language": "GDScript",
+"path": "res://Scripts/Inventaire.gd"
+}, {
+"base": "Node",
 "class": "MonsterScript",
 "language": "GDScript",
 "path": "res://Scripts/MonsterScript.gd"
+}, {
+"base": "KinematicBody",
+"class": "PlayerSpecific",
+"language": "GDScript",
+"path": "res://Scripts/PlayerSpecific.gd"
 }, {
 "base": "Spatial",
 "class": "porteBase",
@@ -43,7 +53,9 @@ _global_script_class_icons={
 "BaseClass": "",
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
+"Inventaire": "res://Textures/ico.png",
 "MonsterScript": "",
+"PlayerSpecific": "",
 "porteBase": "",
 "porteSDB": ""
 }

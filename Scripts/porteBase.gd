@@ -2,7 +2,7 @@ extends Spatial
 
 class_name porteBase
 
-var player
+var player:PlayerSpecific
 var playerOnDoor = false
 func _ready():
 	player = get_node("/root/Spatial/Player")	
