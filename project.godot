@@ -28,12 +28,24 @@ _global_script_classes=[ {
 "class": "MonsterScript",
 "language": "GDScript",
 "path": "res://Scripts/MonsterScript.gd"
+}, {
+"base": "Spatial",
+"class": "porteBase",
+"language": "GDScript",
+"path": "res://Scripts/porteBase.gd"
+}, {
+"base": "Spatial",
+"class": "porteSDB",
+"language": "GDScript",
+"path": "res://Scripts/porteSDB.gd"
 } ]
 _global_script_class_icons={
 "BaseClass": "",
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
-"MonsterScript": ""
+"MonsterScript": "",
+"porteBase": "",
+"porteSDB": ""
 }
 
 [application]

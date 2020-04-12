@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/KinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlayerSpecific.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -11,11 +11,10 @@ background_mode = 1
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
-Sensitivity_X = 0.003
-Sensitivity_Y = 0.003
-Maximum_Y_Look = 90
-Accelaration = 2
-Maximum_Walk_Speed = 2
+Sensitivity_X = 0.001
+Sensitivity_Y = 0.001
+Accelaration = 1
+Jump_Speed = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, -8.74228e-09, -0.4, 0, 0.2, -1.74846e-08, 0, 0, 0 )
