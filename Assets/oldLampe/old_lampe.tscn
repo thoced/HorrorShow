@@ -27,7 +27,7 @@ material/0 = SubResource( 2 )
 [node name="SpotLight" type="SpotLight" parent="RootNode gltf orientation matrix/RootNode model correction matrix/Collada visual scene group/Sphere004/MeshInstance" index="0"]
 transform = Transform( 9.37881, 0, 0, 0, 0.512498, 12.6842, 0, -11.8377, 0.478297, 0, 0, 0 )
 light_color = Color( 0.929412, 0.843137, 0.752941, 1 )
-light_energy = 3.2
+light_energy = 4.62
 shadow_enabled = true
 spot_angle = 82.3
 spot_angle_attenuation = 1.86607
