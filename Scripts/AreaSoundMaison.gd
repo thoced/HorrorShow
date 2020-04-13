@@ -15,3 +15,6 @@ func _on_AreaSoundParquet_body_entered(body):
 func _on_AreaSoundParquet_body_exited(body):
 	if body == player:
 		player.changeSoundPas("HERBE")
+
+
+

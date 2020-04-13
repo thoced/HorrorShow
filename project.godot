@@ -45,6 +45,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/porteBase.gd"
 }, {
 "base": "Spatial",
+"class": "porteMaison",
+"language": "GDScript",
+"path": "res://Scripts/porteMaison.gd"
+}, {
+"base": "Spatial",
 "class": "porteSDB",
 "language": "GDScript",
 "path": "res://Scripts/porteSDB.gd"
@@ -57,6 +62,7 @@ _global_script_class_icons={
 "MonsterScript": "",
 "PlayerSpecific": "",
 "porteBase": "",
+"porteMaison": "",
 "porteSDB": ""
 }
 

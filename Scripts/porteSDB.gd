@@ -13,6 +13,11 @@ func _input(event):
 					stateDoor = !stateDoor
 					if stateDoor:
 						$DoorUnlockSound.play(4.09)
+						var timerOutlast = Timer.new()
+						add_child(timerOutlast)
+						timerOutlast.connect("timeout",self,"startMusicOutlast")
+						timerOutlast.one_shot = true
+						timerOutlast.start(2.0)
 				elif !$DoorLockSound.playing:
 					$DoorLockSound.play(0.0)
 					$Timer.start(0.75)
@@ -20,3 +25,6 @@ func _input(event):
 					
 func _on_Timer_EndSoundDoor():
 	$DoorLockSound.stop()
+
+func startMusicOutlast():
+	$OutlastSound.play()

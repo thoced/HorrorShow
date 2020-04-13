@@ -74,6 +74,10 @@ use_in_baked_light = true
 [node name="CollisionShape" type="CollisionShape" parent="sdb/StaticBody" index="0"]
 shape = SubResource( 5 )
 
+[node name="Cube001" parent="." index="9" groups=[
+"navmesh_loft",
+]]
+
 [node name="StaticBody" type="StaticBody" parent="Cube001" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube001/StaticBody" index="0"]

@@ -26,6 +26,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01394, 0 )
 current = true
 
 [node name="SpotLight" type="SpotLight" parent="NodeCamera/Camera"]
+visible = false
 light_color = Color( 0.956863, 0.929412, 0.717647, 1 )
 light_energy = 1.34
 light_indirect_energy = 0.0
