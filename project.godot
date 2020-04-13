@@ -53,7 +53,7 @@ _global_script_class_icons={
 "BaseClass": "",
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
-"Inventaire": "res://Textures/ico.png",
+"Inventaire": "",
 "MonsterScript": "",
 "PlayerSpecific": "",
 "porteBase": "",
