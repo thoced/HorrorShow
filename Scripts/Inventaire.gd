@@ -1,6 +1,6 @@
 extends Node
 
-class_name Inventaire, "res://Textures/ico.png"
+class_name Inventaire
 
 var inventaire = {} setget setInventaire,getInventaire
 
