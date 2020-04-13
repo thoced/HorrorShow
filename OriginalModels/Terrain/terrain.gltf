@@ -45,7 +45,12 @@
         },
         {
             "mesh" : 0,
-            "name" : "Plane"
+            "name" : "Plane",
+            "translation" : [
+                -0.01590581052005291,
+                -0.002375316806137562,
+                -0.00835492741316557
+            ]
         }
     ],
     "materials" : [
@@ -55,7 +60,7 @@
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
-                    "texCoord" : 0
+                    "texCoord" : 1
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.949999988079071
@@ -70,9 +75,10 @@
                     "attributes" : {
                         "POSITION" : 0,
                         "NORMAL" : 1,
-                        "TEXCOORD_0" : 2
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
                     },
-                    "indices" : 3,
+                    "indices" : 4,
                     "material" : 0
                 }
             ]
@@ -85,16 +91,16 @@
     ],
     "images" : [
         {
-            "mimeType" : "image/jpeg",
-            "name" : "TexturesCom_Groundplants0187_1_seamless_S",
-            "uri" : "TexturesCom_Groundplants0187_1_seamless_S.jpg"
+            "mimeType" : "image/png",
+            "name" : "Detail",
+            "uri" : "Detail.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 18889,
+            "count" : 18821,
             "max" : [
                 10.000001907348633,
                 1.588889479637146,
@@ -110,17 +116,23 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 18889,
+            "count" : 18821,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 18889,
+            "count" : 18821,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 18821,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
             "componentType" : 5123,
             "count" : 98304,
             "type" : "SCALAR"
@@ -129,28 +141,33 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 226668,
+            "byteLength" : 225852,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 226668,
-            "byteOffset" : 226668
+            "byteLength" : 225852,
+            "byteOffset" : 225852
         },
         {
             "buffer" : 0,
-            "byteLength" : 151112,
-            "byteOffset" : 453336
+            "byteLength" : 150568,
+            "byteOffset" : 451704
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 150568,
+            "byteOffset" : 602272
         },
         {
             "buffer" : 0,
             "byteLength" : 196608,
-            "byteOffset" : 604448
+            "byteOffset" : 752840
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 801056,
+            "byteLength" : 949448,
             "uri" : "terrain.bin"
         }
     ]
