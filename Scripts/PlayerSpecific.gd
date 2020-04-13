@@ -27,11 +27,14 @@ func _process(delta):
 		playIsDone = false
 		
 func changeSoundPas(nameSound):
-	if nameSound == "PARQUET":
-		playerSound.stream = streamPasParquet
-	if nameSound == "HERBE":
-		playerSound.stream = streamPasHerbe
-	
+	match nameSound:
+		"PARQUET":
+			playerSound.stream = streamPasParquet
+		"HERBE":
+			playerSound.stream = streamPasHerbe
+		_:
+			playerSound.stream = streamPasHerbe
+
 func finish_sound():
 	playIsDone = false
 	
