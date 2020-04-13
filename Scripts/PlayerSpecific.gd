@@ -14,6 +14,7 @@ var inventaire:Array setget ,getInventaire
 
 func _ready():
 	playerSound = $AudioPasParquet
+	playerSound.stream = streamPasHerbe
 	playerSound.connect("finished",self,"finish_sound")
 		
 func _process(delta):
