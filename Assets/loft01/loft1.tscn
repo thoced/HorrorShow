@@ -57,10 +57,7 @@ shape = SubResource( 3 )
 [node name="CollisionShape" type="CollisionShape" parent="embrasure_sdb/StaticBody" index="0"]
 shape = SubResource( 4 )
 
-[node name="Sphere" parent="." index="7"]
-use_in_baked_light = true
-
-[node name="sdb" parent="." index="9" groups=[
+[node name="sdb" parent="." index="8" groups=[
 "navmesh_loft",
 ]]
 use_in_baked_light = true
