@@ -400,7 +400,7 @@ spot_attenuation = 1.93187
 spot_angle = 135.0
 
 [node name="terrain" parent="." instance=ExtResource( 6 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 19.998, 19.7622, 59.8396 )
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 19.998, 19.85, 60.414 )
 
 [node name="tree01" parent="terrain" instance=ExtResource( 11 )]
 transform = Transform( 0.199763, 0, -0.00973858, 0, 0.2, 0, 0.00973858, 0, 0.199763, -2.8016, -1.41184, -4.34698 )
