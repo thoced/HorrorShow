@@ -6,16 +6,18 @@ class_name PlayerSpecific
 var playIsDone = false
 var playerSound
 var audioDoor
+var streamPasParquet = load("res://Sons/pas.wav")
+var streamPasHerbe = load("res://Sons/pasHerbe.wav")
 
 #Inventaire
 var inventaire:Array setget ,getInventaire
 
 func _ready():
-	playerSound = get_parent().get_node("PlayerSound")
+	playerSound = $AudioPasParquet
 	playerSound.connect("finished",self,"finish_sound")
-	inventaire.append("KEY01")
 		
 func _process(delta):
+	
 	if onMove and !playIsDone:
 		playerSound.play(1.0)
 		playIsDone = true
@@ -23,6 +25,12 @@ func _process(delta):
 	if !onMove:	
 		playerSound.stop()
 		playIsDone = false
+		
+func changeSoundPas(nameSound):
+	if nameSound == "PARQUET":
+		playerSound.stream = streamPasParquet
+	if nameSound == "HERBE":
+		playerSound.stream = streamPasHerbe
 	
 func finish_sound():
 	playIsDone = false
@@ -40,6 +48,15 @@ func getPick():
 	if result != null and result.size() > 0:
 		return result
 
+func getTypeGround():
+	var ray_lenght = 100
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = transform.origin
+	var to = transform.origin + (Vector3(0,-1,0) * ray_lenght)
+	var space_state = get_world().direct_space_state
+	var result = space_state.intersect_ray(from,to)
+	if result != null and result.size() > 0:
+		return result
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
