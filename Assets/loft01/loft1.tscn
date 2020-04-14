@@ -93,5 +93,11 @@ shape = SubResource( 7 )
 [node name="CollisionShape2" type="CollisionShape" parent="AreaSoundParquet" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4527, 12.5408, 11.6995 )
 shape = SubResource( 8 )
+
+[node name="toit" parent="." index="12"]
+use_in_baked_light = true
+
+[node name="Cube002" parent="." index="13"]
+use_in_baked_light = true
 [connection signal="body_entered" from="AreaSoundParquet" to="AreaSoundParquet" method="_on_AreaSoundParquet_body_entered"]
 [connection signal="body_exited" from="AreaSoundParquet" to="AreaSoundParquet" method="_on_AreaSoundParquet_body_exited"]

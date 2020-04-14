@@ -26,7 +26,9 @@
                 7,
                 8,
                 9,
-                10
+                10,
+                11,
+                12
             ]
         }
     ],
@@ -97,9 +99,9 @@
             "mesh" : 3,
             "name" : "plafond",
             "translation" : [
-                88.69589233398438,
+                87.39268493652344,
                 25,
-                40.69390106201172
+                41.29492950439453
             ]
         },
         {
@@ -149,6 +151,24 @@
                 0.5995521545410156,
                 0.03531716391444206,
                 12.0927152633667
+            ]
+        },
+        {
+            "mesh" : 8,
+            "name" : "toit",
+            "translation" : [
+                89.59402465820312,
+                28.902496337890625,
+                42.591739654541016
+            ]
+        },
+        {
+            "mesh" : 9,
+            "name" : "Cube.002",
+            "translation" : [
+                9.652335166931152,
+                28.98517608642578,
+                12.296867370605469
             ]
         }
     ],
@@ -538,6 +558,34 @@
                     },
                     "indices" : 70,
                     "material" : 10
+                }
+            ]
+        },
+        {
+            "name" : "Cube.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 71,
+                        "NORMAL" : 72,
+                        "TEXCOORD_0" : 73
+                    },
+                    "indices" : 74,
+                    "material" : 6
+                }
+            ]
+        },
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 75,
+                        "NORMAL" : 76,
+                        "TEXCOORD_0" : 77
+                    },
+                    "indices" : 78,
+                    "material" : 6
                 }
             ]
         }
@@ -1336,6 +1384,74 @@
             "componentType" : 5123,
             "count" : 558,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 71,
+            "componentType" : 5126,
+            "count" : 38,
+            "max" : [
+                52.59777069091797,
+                15.43924331665039,
+                42.51885986328125
+            ],
+            "min" : [
+                -52.59777069091797,
+                -1.757121205329895,
+                -42.51885986328125
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 72,
+            "componentType" : 5126,
+            "count" : 38,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 73,
+            "componentType" : 5126,
+            "count" : 38,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 74,
+            "componentType" : 5123,
+            "count" : 60,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 75,
+            "componentType" : 5126,
+            "count" : 38,
+            "max" : [
+                68.7537841796875,
+                12.575740814208984,
+                14.468703269958496
+            ],
+            "min" : [
+                -27.238916397094727,
+                -1.8398023843765259,
+                -14.468703269958496
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 76,
+            "componentType" : 5126,
+            "count" : 38,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 77,
+            "componentType" : 5126,
+            "count" : 38,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 78,
+            "componentType" : 5123,
+            "count" : 60,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -1693,11 +1809,51 @@
             "buffer" : 0,
             "byteLength" : 1116,
             "byteOffset" : 134480
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 456,
+            "byteOffset" : 135596
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 456,
+            "byteOffset" : 136052
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 304,
+            "byteOffset" : 136508
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 120,
+            "byteOffset" : 136812
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 456,
+            "byteOffset" : 136932
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 456,
+            "byteOffset" : 137388
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 304,
+            "byteOffset" : 137844
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 120,
+            "byteOffset" : 138148
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 135596,
+            "byteLength" : 138268,
             "uri" : "loft1.bin"
         }
     ]
