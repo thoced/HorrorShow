@@ -14,6 +14,8 @@ var velocity = Vector3(0,0,0)
 var forward_velocity = 0
 var Walk_Speed = 0
 var crounch = false
+var bananeRotLeft = false
+var bananeRotRight = false
 var positionDown
 var positionUp
 var bananeCenter
@@ -45,7 +47,6 @@ func _process(delta):
 
 func _physics_process(delta):
 	velocity.y -= GRAVITY
-	crounch = false
 	onMove = false
 	
 	if Input.is_key_pressed(KEY_Z) or Input.is_key_pressed(KEY_UP):
@@ -92,8 +93,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 	#crounch
-	if Input.is_key_pressed(KEY_CONTROL):
-		crounch = true
+	if crounch:
 		var vNew = $NodeCamera.transform.origin.linear_interpolate(positionDown,0.1)
 		$NodeCamera.transform.origin = vNew
 	else:
@@ -101,13 +101,13 @@ func _physics_process(delta):
 		$NodeCamera.transform.origin = vNew
 		
 	#banane
-	if Input.is_key_pressed(KEY_A):
+	if bananeRotLeft:
 		var vNew = $NodeCamera.transform.basis.slerp(bananeLeft,0.1)
 		$NodeCamera.transform.basis = vNew
-	if Input.is_key_pressed(KEY_E):
+	if bananeRotRight:
 		var vNew = $NodeCamera.transform.basis.slerp(bananeRight,0.1)
 		$NodeCamera.transform.basis = vNew
-	elif not(Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_E)):
+	elif not(bananeRotLeft or bananeRotRight):
 		var vNew = $NodeCamera.transform.basis.slerp(bananeCenter,0.1)
 		$NodeCamera.transform.basis = vNew
 		
@@ -115,5 +115,21 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-Sensitivity_X * event.relative.x)
+		
+	if event is InputEventKey:
+		if event.pressed:
+			if event.scancode == KEY_CONTROL:
+				crounch = !crounch
+			if event.scancode == KEY_A:
+				bananeRotLeft = !bananeRotLeft
+				bananeRotRight = false
+			if event.scancode == KEY_E:
+				bananeRotRight = !bananeRotRight
+				bananeRotLeft = false
+			
+				
+			
+			
+				
 		
 

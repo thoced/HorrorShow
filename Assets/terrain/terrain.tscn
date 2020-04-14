@@ -6,6 +6,7 @@
 [ext_resource path="res://Textures/DetailNormal.jpg" type="Texture" id=4]
 
 [sub_resource type="VisualShaderNodeTexture" id=1]
+output_port_for_preview = 0
 texture = ExtResource( 3 )
 texture_type = 1
 
@@ -21,6 +22,7 @@ output_port_for_preview = 0
 input_name = "uv2"
 
 [sub_resource type="VisualShaderNodeVectorInterp" id=5]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, Vector3( 0.6, 0.6, 0.6 ) ]
 
 [sub_resource type="VisualShaderNodeTexture" id=6]
 texture = ExtResource( 4 )
@@ -71,7 +73,7 @@ void fragment() {
 	float n_out4p1 = tex_frg_4_read.a;
 
 // VectorMix:7
-	vec3 n_in7p2 = vec3(0.50000, 0.50000, 0.50000);
+	vec3 n_in7p2 = vec3(0.60000, 0.60000, 0.60000);
 	vec3 n_out7p0 = mix(n_out2p0, n_out4p0, n_in7p2);
 
 // Texture:8
@@ -90,7 +92,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -26, 193.414 )
+graph_offset = Vector2( 38, 77.1637 )
 nodes/vertex/0/position = Vector2( 740, 120 )
 nodes/vertex/2/node = SubResource( 7 )
 nodes/vertex/2/position = Vector2( 260, 180 )
@@ -103,14 +105,14 @@ nodes/fragment/2/position = Vector2( 380, 60 )
 nodes/fragment/3/node = SubResource( 2 )
 nodes/fragment/3/position = Vector2( 80, 140 )
 nodes/fragment/4/node = SubResource( 3 )
-nodes/fragment/4/position = Vector2( 360, 320 )
+nodes/fragment/4/position = Vector2( 300, 440 )
 nodes/fragment/6/node = SubResource( 4 )
 nodes/fragment/6/position = Vector2( 60, 340 )
 nodes/fragment/7/node = SubResource( 5 )
-nodes/fragment/7/position = Vector2( 640, 180 )
+nodes/fragment/7/position = Vector2( 820, 140 )
 nodes/fragment/8/node = SubResource( 6 )
 nodes/fragment/8/position = Vector2( 560, 480 )
-nodes/fragment/connections = PoolIntArray( 3, 0, 2, 0, 6, 0, 4, 0, 2, 0, 7, 0, 4, 0, 7, 1, 7, 0, 0, 0, 6, 0, 8, 0, 8, 0, 0, 8 )
+nodes/fragment/connections = PoolIntArray( 3, 0, 2, 0, 6, 0, 4, 0, 4, 0, 7, 1, 7, 0, 0, 0, 6, 0, 8, 0, 8, 0, 0, 8, 2, 0, 7, 0 )
 
 [sub_resource type="ShaderMaterial" id=10]
 shader = SubResource( 9 )
