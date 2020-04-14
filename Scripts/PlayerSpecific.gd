@@ -22,6 +22,8 @@ func _ready():
 	playerSound.pitch_scale = 1.6
 	playerSound.connect("finished",self,"finish_sound")
 	audioOiseau = get_node("/root/Spatial/AudioOiseau")
+	
+	inventaire.append("KEYGOLD")
 		
 func _process(delta):
 	

@@ -2,8 +2,10 @@ extends "res://Scripts/porteBase.gd"
 
 class_name porteSDB
 
+var scriptControlMonster
+
 func _ready():
-	pass
+	scriptControlMonster = get_node("/root/Spatial/Script_control_monster")
 
 func _input(event):
 	if playerOnDoor:
@@ -18,6 +20,9 @@ func _input(event):
 						timerOutlast.connect("timeout",self,"startMusicOutlast")
 						timerOutlast.one_shot = true
 						timerOutlast.start(2.0)
+						scriptControlMonster.start_script_monster()
+						
+						
 				elif !$DoorLockSound.playing:
 					$DoorLockSound.play(0.0)
 					$Timer.start(0.75)

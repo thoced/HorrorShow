@@ -37,26 +37,6 @@ func _ready():
 	simplePaths.empty()
 	nextPoint = translation
 	
-	#animation
-	#$AnimationPlayer.connect("animation_finished",self,"_on_AnimationPlayer_animation_finished")
-	#$AnimationPlayer.play("Idle",-1,0.8)
-	
-	
-	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-#func getNewTargetPosition():
-	
-	#if nblistPosTarget > 0:
-	#	var random = RandomNumberGenerator.new()
-	#	random.randomize()
-	#	var nb = random.randi_range(0,nblistPosTarget - 1)
-	#	return TargetsNode.get_child(nb).translation
-	#else:
-	#	return null
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play(anim_name)
