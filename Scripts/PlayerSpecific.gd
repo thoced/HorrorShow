@@ -8,6 +8,7 @@ var playerSound
 var audioDoor
 var streamPasParquet = load("res://Sons/pas.wav")
 var streamPasHerbe = load("res://Sons/pasHerbe.wav")
+var audioOiseau
 
 #Inventaire
 var inventaire:Array setget ,getInventaire
@@ -20,6 +21,7 @@ func _ready():
 	playerSound.max_db = 3.0
 	playerSound.pitch_scale = 1.6
 	playerSound.connect("finished",self,"finish_sound")
+	audioOiseau = get_node("/root/Spatial/AudioOiseau")
 		
 func _process(delta):
 	
@@ -39,12 +41,22 @@ func changeSoundPas(nameSound):
 			playerSound.unit_size = 21.0
 			playerSound.max_db = 3.0
 			playerSound.pitch_scale = 1.15
+			audioOiseau.stop()
+		
+		"CABANE":
+			playerSound.stream = streamPasParquet
+			playerSound.unit_db = 0.0
+			playerSound.unit_size = 21.0
+			playerSound.max_db = 3.0
+			playerSound.pitch_scale = 1.15
+		
 		"HERBE":
 			playerSound.stream = streamPasHerbe
 			playerSound.unit_db = 50.0
 			playerSound.unit_size = 21.0
 			playerSound.max_db = 3.0
 			playerSound.pitch_scale = 1.6
+			audioOiseau.play()
 		_:
 			playerSound.stream = streamPasHerbe
 			playerSound.unit_db = 50.0
