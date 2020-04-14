@@ -13,8 +13,12 @@ var streamPasHerbe = load("res://Sons/pasHerbe.wav")
 var inventaire:Array setget ,getInventaire
 
 func _ready():
-	playerSound = $AudioPasParquet
+	playerSound = $AudioPas
 	playerSound.stream = streamPasHerbe
+	playerSound.unit_db = 50.0
+	playerSound.unit_size = 21.0
+	playerSound.max_db = 3.0
+	playerSound.pitch_scale = 1.6
 	playerSound.connect("finished",self,"finish_sound")
 		
 func _process(delta):
@@ -31,10 +35,22 @@ func changeSoundPas(nameSound):
 	match nameSound:
 		"PARQUET":
 			playerSound.stream = streamPasParquet
+			playerSound.unit_db = 0.0
+			playerSound.unit_size = 21.0
+			playerSound.max_db = 3.0
+			playerSound.pitch_scale = 1.15
 		"HERBE":
 			playerSound.stream = streamPasHerbe
+			playerSound.unit_db = 50.0
+			playerSound.unit_size = 21.0
+			playerSound.max_db = 3.0
+			playerSound.pitch_scale = 1.6
 		_:
 			playerSound.stream = streamPasHerbe
+			playerSound.unit_db = 50.0
+			playerSound.unit_size = 21.0
+			playerSound.max_db = 3.0
+			playerSound.pitch_scale = 1.6
 
 func finish_sound():
 	playIsDone = false
