@@ -63,6 +63,7 @@ func changeSoundPas(nameSound):
 			playerSound.unit_size = 21.0
 			playerSound.max_db = 3.0
 			playerSound.pitch_scale = 1.6
+			audioOiseau.play()
 
 func finish_sound():
 	playIsDone = false
